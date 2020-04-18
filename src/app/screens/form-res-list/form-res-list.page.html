@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="negrita">Completed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="imagen">
+    <img class="imagenTamanyo" src='../assets/logoPi.png'>
+  </div>
+  <ion-card *ngFor="let response of responses">
+    <ion-item>
+      <ion-label class="font" (click)="navigate(response.key)">Form: {{response.value.idFormStruct}}</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

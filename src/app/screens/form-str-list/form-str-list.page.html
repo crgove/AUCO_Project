@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="negrita">My Forms</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="imagen">
+    <img class="imagenTamanyo" src='../assets/logoPi.png'>
+  </div>
+  <ion-list *ngFor="let struct of structs">
+    <ion-card>
+      <ion-item>
+        <ion-label class="font" (click)="navigate(struct.key)">Form: {{struct.value.name}}</ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+  <ion-button
+  color="danger" 
+  class="shadow-redSecond" 
+  shape="round"
+  [routerLink] = "['/form-of-forms']"
+  *ngIf="user.isTeacher">Add one</ion-button>
+</ion-content>

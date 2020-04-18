@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="negrita">Classroom Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="imagen">
+    <img class="imagenTamanyo" src='../assets/logoPi.png'>
+  </div>
+  <br>
+  <ion-item>
+    <ion-label class="font" position="floating">Classroom Name</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <br>
+  <div class="buttonInsert">
+    <ion-button color="danger" class="shadow-redSecond" shape="round" (click)="introducirDatos()" color="danger">
+      <ion-label>Add</ion-label>
+    </ion-button>
+  </div>
+</ion-content>

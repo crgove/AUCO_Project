@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center class="negrita">
+      Questions
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngFor="let item of struct.fields; let i = index">
+      <div *ngIf="item.type =='text'">
+        <p class="pene">{{item.label}}</p>
+        <ion-item>
+          <ion-input [(ngModel)]="response.fields[i].response" placeholder="Introduce un texto" [disabled]="idFormResponse != undefined"></ion-input>  
+        </ion-item>
+      </div>
+      <ion-item *ngIf="item.type=='radio'" [disabled]="idFormResponse != undefined">
+        <ion-list>
+          {{item.label}}
+          <ion-grid>
+            <ion-radio-group [(ngModel)]="response.fields[i].response">
+              <ion-row>
+                <ion-slides spaceBetween="10">
+                  <ion-slide class="centrarleft">
+                    <ion-item class="ion-float-left">
+                      <ion-label>1</ion-label>
+                      <ion-radio slot="end" value="1"></ion-radio>
+                    </ion-item>
+                    <ion-item class="ion-text-center">
+                      <ion-label>2</ion-label>
+                      <ion-radio slot="end" value="2"></ion-radio>
+                    </ion-item>
+                    <ion-item class="ion-text-end">
+                      <ion-label>3</ion-label>
+                      <ion-radio slot="end" value="3"></ion-radio>
+                    </ion-item>
+                  </ion-slide>
+                  <ion-slide class="centrarleft">
+                    <ion-item>
+                      <ion-label>4</ion-label>
+                      <ion-radio slot="end" value="4"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>5</ion-label>
+                      <ion-radio slot="end" value="5"></ion-radio>
+                    </ion-item>
+                  </ion-slide>
+                </ion-slides>
+              </ion-row>
+            </ion-radio-group>
+          </ion-grid>
+        </ion-list>
+      </ion-item>
+      <ion-item *ngIf="item.type=='y/n'">
+        <p>{{item.label}}</p>
+        <ion-checkbox color="danger" class="pene" [(ngModel)]="response.fields[i].response" [disabled]="idFormResponse != undefined"></ion-checkbox>
+      </ion-item>
+  </ion-list>
+  <ion-button
+    color="danger" 
+    class="shadow-redSecond" 
+    shape="round" 
+    (click)="submit()" 
+    *ngIf="idFormResponse == undefined">Submit</ion-button>
+</ion-content>

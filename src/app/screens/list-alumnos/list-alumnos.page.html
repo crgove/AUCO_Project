@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="negrita">Students</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="imagen">
+    <img class="imagenTamanyo" src='../assets/logoPi.png'>
+  </div>
+  <ion-card *ngFor="let Item of alumnos">
+  <ion-item>
+    <ion-label (click)=go(Item.id) class="font">{{Item.name}} {{Item.surname}}</ion-label>
+    <ion-button color="danger" class="shadow-red" shape="round" (click)=deleteChildFromClassroom(Item.id)>Delete</ion-button>
+  </ion-item>
+
+</ion-card>
+<div class="butt">
+  <ion-button color="danger" class="shadow-red" shape="round" [routerLink]="['/add-child-screen/', id]">add new student</ion-button>
+</div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="negrita">
+      Add New Student
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="imagen">
+    <img class="imagenTamanyo" src='../assets/logoPi.png'>
+  </div>
+  <ion-item>
+    <ion-label class="font" position="floating">Name</ion-label>
+    <ion-input [(ngModel)]="child.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="font" position="floating">Surname</ion-label>
+    <ion-input [(ngModel)]="child.surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="font" position="floating">Username</ion-label>
+    <ion-input [(ngModel)]="child.userName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="font" position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="child.password"></ion-input>
+  </ion-item>
+  <div class="buttonAdd">
+    <ion-button class="shadow-redSecond" shape="round" (click)="save()" color="danger">
+      <ion-label>Add</ion-label>
+    </ion-button>
+  </div>
+</ion-content>

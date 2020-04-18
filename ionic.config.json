@@ -1,0 +1,7 @@
+{
+  "name": "bullyingApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

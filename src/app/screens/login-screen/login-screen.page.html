@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title text-center class="negrita">
+      Log in
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="ion-padding">
+
+    <div class="imagen">
+      <img class="imagenTamanyo" src='../assets/logoPi.png'>
+    </div>
+  
+    <ion-item>
+      <ion-label class="font" position="floating" >Username</ion-label>
+      <ion-input [(ngModel)]="userTexto"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="contrasenya==true"> 
+      <ion-label class="font" position="floating" >Password</ion-label>
+      <ion-input type="password" [(ngModel)]="contraTexto"  value={{contraTexto}}></ion-input>
+      <ion-button (click)="(CambiarInput())" color="danger" class="shadow-red" shape="round">Show/Hide</ion-button>
+    </ion-item>
+    <ion-item *ngIf="contrasenya==false">
+      <ion-label class="font" position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="contraTexto" value={{contraTexto}}></ion-input>
+      <ion-button (click)="(CambiarInput())" color="danger" class="shadow-red" shape="round">Show/Hide</ion-button>
+    </ion-item>
+    <div class="buttonSignIn">
+      <ion-button color="danger" class="shadow-redSecond" shape="round" (click)="(Implementar())">Sign in</ion-button>
+    </div>
+  </div>
+</ion-content>

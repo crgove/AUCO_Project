@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button text="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="negrita">Add One Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="imagen">
+    <img class="imagenTamanyo" src='../assets/logoPi.png'>
+  </div>
+
+  <ion-item>
+    <ion-label class="font" position="floating">Name</ion-label>
+    <ion-input [(ngModel)]="struct.name"></ion-input>
+  </ion-item>
+  <ion-list *ngFor="let field of struct.fields">
+    <ion-item>
+      <ion-label class="font" position="floating">Label text</ion-label>
+      <ion-input [(ngModel)]="field.label"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Requiered</ion-label>
+      <ion-toggle [(ngModel)]="field.requiered"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo</ion-label>
+      <ion-select value="y/n" okText="Okay" cancelText="Dismiss" [(ngModel)]="field.type">
+        <ion-select-option value="y/n">si/no</ion-select-option>
+        <ion-select-option value="text">texto</ion-select-option>
+        <ion-select-option value="radio">1-5</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button color="danger" class="shadow-redSecond" shape="round" (click)="add()">Add</ion-button>
+  <ion-button color="danger" class="shadow-redSecond" shape="round" (click)="upload()">Upload</ion-button>
+</ion-content>

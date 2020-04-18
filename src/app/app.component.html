@@ -1,0 +1,42 @@
+<ion-app>
+  <ion-menu *ngIf="isLogged()"  auto-hide="true" side="start" menuId="first" contentId="principal">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <!--BOTH-->
+
+        <ion-button color="danger" expand="full"><ion-item color="danger" (click)="(profile())">Profile</ion-item></ion-button>
+        <ion-button color="danger" expand="full" [routerLink]="['/reports-screen']" (click)="(closeCustom())"><ion-item color="danger">Reports</ion-item></ion-button>
+       
+        
+        <!--CHILD-->
+        
+        <ion-button *ngIf="!isTeacher()" menuclose color="danger" expand="full" [routerLink]="['/report-form']" (click)="(closeCustom())"><ion-item color="danger">
+          Create a report</ion-item></ion-button>
+        <ion-button *ngIf="!isTeacher()" color="danger" expand="full" [routerLink]="['/teachers']" (click)="(closeCustom())"><ion-item color="danger">
+          Forms</ion-item></ion-button>
+
+        <!--TEACHER-->
+        <ion-button *ngIf="isTeacher()" color="danger" expand="full" [routerLink]="['/add-classroom-screen']" (click)="(closeCustom())"><ion-item color="danger">
+          Add new classroom</ion-item></ion-button>
+        <ion-button *ngIf="isTeacher()" color="danger" expand="full" [routerLink]="['/class-list-screen/','true']" (click)="(closeCustom())"><ion-item color="danger">
+          My classrooms</ion-item></ion-button>
+        <ion-button *ngIf="isTeacher()" color="danger" expand="full" [routerLink]="['/form-str-list']" (click)="(closeCustom())"><ion-item color="danger">
+          My Forms</ion-item></ion-button>
+
+
+
+          <!--BOTH-->
+        <ion-button color="danger" expand="full" [routerLink]="['/home']" (click)="(logOff())"><ion-item color="danger">Log Off</ion-item></ion-button>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+
+  <ion-router-outlet id="principal"></ion-router-outlet>
+</ion-app>
