@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+/*import { Injectable } from "@angular/core";
 import ClassroomService from 'src/app/services/classroom.service';
 import {IClassroom, IServerResponse} from '../../interfaces/interfaces'
 import ApiRestSrc from './apiRest.dataSource';
@@ -132,4 +132,4 @@ export default class ClassroomsProvider extends ClassroomService {
             throw error
         }
     }
-}
+}*/

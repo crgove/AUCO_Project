@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { MenuController, LoadingController } from '@ionic/angular';
 import UserService from 'src/app/services/user.service';
 import { ITeacher } from 'src/app/interfaces/interfaces';
@@ -44,4 +44,4 @@ export class TeachersPage implements OnInit {
       `/form-str-list/${idForm}`
     )
   }
-}
+}*/

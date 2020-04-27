@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { MenuController, ToastController, LoadingController } from '@ionic/angular';
 import UserService from 'src/app/services/user.service';
 import { IChild } from 'src/app/interfaces/interfaces';
@@ -77,4 +77,4 @@ export class ListAlumnosPage implements OnInit {
   
 
 
-}
+}*/

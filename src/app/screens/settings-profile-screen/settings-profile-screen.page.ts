@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { IChild, IUser } from 'src/app/interfaces/interfaces';
 import ReportsService from 'src/app/services/reports.service';
 import UserService from 'src/app/services/user.service';
@@ -9,8 +9,8 @@ import { ToastController } from '@ionic/angular';
   selector: 'app-settings-profile-screen',
   templateUrl: './settings-profile-screen.page.html',
   styleUrls: ['./settings-profile-screen.page.scss'],
-})
-export class SettingsProfileScreenPage implements OnInit {
+}) */
+/*export class SettingsProfileScreenPage implements OnInit {
   password: string = "";
   //password  =  true;
   contraTexto : string;
@@ -60,4 +60,4 @@ export class SettingsProfileScreenPage implements OnInit {
   }
 
 
-}
+}*/

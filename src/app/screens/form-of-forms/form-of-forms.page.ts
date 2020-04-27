@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { IFormStruct } from 'src/app/interfaces/interfaces';
 import FormsService from 'src/app/services/forms.service';
-import UserService from 'src/app/services/user.service';
+import UserService from  'src/app/services/user.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -53,4 +53,4 @@ export class FormOfFormsPage implements OnInit {
   }
 
   ngOnInit() { }
-}
+}*/

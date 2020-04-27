@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { IClassroom } from '../interfaces/interfaces';
 
 
@@ -10,4 +10,4 @@ export default abstract class ClassroomService {
     abstract addClassroomToTeacher(idClass: string, idTeacher: string): Promise<void>;
     abstract addChildrenToClassroom(idClass: string, idChild: string): Promise <void>;
     abstract deleteChildFromClassroom(idClass: string, idChild: string): Promise<void>;
-}
+}*/

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import UserService from 'src/app/services/user.service';
 import ReportsService from 'src/app/services/reports.service';
 import { IReport } from 'src/app/interfaces/interfaces';
@@ -48,4 +48,4 @@ export class ReportFormPage implements OnInit {
       `/profile-screen/${this._user.getCurrentUser().isTeacher ? "teacher" : "children"}/${this._user.getCurrentUser().id}`
     )
   }
-}
+}*/

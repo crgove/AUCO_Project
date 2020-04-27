@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import ClassroomService from 'src/app/services/classroom.service';
 import UserService from 'src/app/services/user.service';
 import { IClassroom } from 'src/app/interfaces/interfaces';
 import { ToastController, LoadingController } from '@ionic/angular';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';*/
 
-@Component({
+/*@Component({
   selector: 'app-all-classrooms-list-screen',
   templateUrl: './all-classrooms-list-screen.page.html',
   styleUrls: ['./all-classrooms-list-screen.page.scss'],
@@ -34,7 +34,7 @@ export class AllClassroomsListScreenPage implements OnInit {
     })
 
     return await loading.present();
-  }*/
+  }
 
   async showLoading(){
     const loading = await this._loading.create({
@@ -79,4 +79,4 @@ export class AllClassroomsListScreenPage implements OnInit {
   
   }
 
-}
+}*/

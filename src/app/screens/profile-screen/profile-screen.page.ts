@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { IUser, IReport, IChild, ITeacher } from 'src/app/interfaces/interfaces';
 import ReportsService from 'src/app/services/reports.service';
 import UserService from 'src/app/services/user.service';
@@ -96,4 +96,4 @@ export class ProfileScreenPage implements OnInit {
     )
 
   }
-}
+}*/

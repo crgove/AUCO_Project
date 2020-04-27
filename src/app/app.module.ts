@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import{ AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { /*HardCodeServicesModule,*/ ApiRestServicesModule } from './providers';
+//import { /*HardCodeServicesModule,*/ ApiRestServicesModule } from './providers';
 //import FirebaseServicesModule from './providers/Firebase/firebase.module';
 import FirebaseSrc from './providers/Firebase/firebase.dataSource';
 import FormsService from './services/forms.service';
@@ -16,6 +16,7 @@ import FormsProvider from './providers/Firebase/forms.provider';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import FirebaseServicesModule from './providers/Firebase/firebase.module';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -25,12 +26,14 @@ import FirebaseServicesModule from './providers/Firebase/firebase.module';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    ApiRestServicesModule,
+    //ApiRestServicesModule,
     FirebaseServicesModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    UserService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FirebaseSrc,
       {provide: FormsService, useClass: FormsProvider}

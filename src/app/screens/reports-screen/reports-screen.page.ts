@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { IReport } from 'src/app/interfaces/interfaces';
 import { ActivatedRoute} from '@angular/router';
 import ReportsService from 'src/app/services/reports.service';
 import { MenuController, LoadingController} from '@ionic/angular';
 import UserService from 'src/app/services/user.service';
 
-@Component({
+/*@Component({
   selector: 'app-reports-screen',
   templateUrl: './reports-screen.page.html',
   styleUrls: ['./reports-screen.page.scss'],
 
-})
-export class ReportsScreenPage implements OnInit {
+})*/
+/*export class ReportsScreenPage implements OnInit {
   
   reports: IReport[]=[];
  
@@ -30,7 +30,7 @@ export class ReportsScreenPage implements OnInit {
       return await loading.present();
     }*/
   
-  async showLoading(){
+  /*async showLoading(){
     const loading = await this._loading.create({
       message: "Waiting...",
       duration: 1000
@@ -65,4 +65,4 @@ export class ReportsScreenPage implements OnInit {
   
 
   
-}
+}*/

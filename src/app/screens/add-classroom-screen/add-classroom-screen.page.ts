@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import ClassroomService from 'src/app/services/classroom.service';
 import { IClassroom } from 'src/app/interfaces/interfaces';
@@ -65,4 +65,4 @@ export class AddClassroomScreenPage implements OnInit {
     })
   }
 
-}
+}*/

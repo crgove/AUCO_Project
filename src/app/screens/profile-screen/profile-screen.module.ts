@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -17,4 +17,4 @@ import { ProfileScreenPage } from './profile-screen.page';
   ],
   declarations: [ProfileScreenPage]
 })
-export class ProfileScreenPageModule {}
+export class ProfileScreenPageModule {}*/

@@ -1,4 +1,4 @@
-import ReportsService from 'src/app/services/reports.service';
+/*import ReportsService from 'src/app/services/reports.service';
 import { IReport, IServerResponse } from '../../interfaces/interfaces'
 import { Injectable } from '@angular/core';
 import ApiRestSrc from './apiRest.dataSource';
@@ -83,4 +83,4 @@ export default class ReportsProvider extends ReportsService {
             childrenId: response.ChildrenId
         }
     }
-}
+}*/

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IFirebaseResponse, IFormStruct, IUser } from 'src/app/interfaces/interfaces';
 import FormsService from 'src/app/services/forms.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import UserService from 'src/app/services/user.service';
+//import UserService from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-form-str-list',
@@ -14,15 +14,20 @@ export class FormStrListPage implements OnInit {
   idTeacher: string 
   user: IUser
   isCreated: boolean = false
+  id: string;
 
   constructor(
     private _formsService: FormsService,
     private _activatedRoute: ActivatedRoute,
-    private _userService: UserService,
+    //private _userService: UserService,
     private _route: Router,
   ) { }
 
   async ngOnInit() {
+
+    /*this.id = this._activatedRoute.snapshot.paramMap.get('id');
+    console.log("He recibido un " + this.id);
+    /*
     this.user = this._userService.getCurrentUser()
     this.idTeacher = this.user.isTeacher ? this.user.id : this._activatedRoute.snapshot.paramMap.get('idTeacher')
     this._formsService.getFormsStructsByTeacher(this.idTeacher).then(result => this.structs = result)
@@ -46,6 +51,7 @@ export class FormStrListPage implements OnInit {
       this._route.navigateByUrl(
         `/pregunta1-p2/${idForm}`
       )
-  }
+  }*/
+  } 
 
 }

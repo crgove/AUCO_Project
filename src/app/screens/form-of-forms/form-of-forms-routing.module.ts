@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FormOfFormsPage } from './form-of-forms.page';
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class FormOfFormsPageRoutingModule {}
+export class FormOfFormsPageRoutingModule {}*/

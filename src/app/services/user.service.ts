@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
-import { ITeacher, IChild, IUser } from '../interfaces/interfaces';
+import { IUser } from '../interfaces/interfaces';
+import { AngularFireDatabase } from '@angular/fire/database';
 
-@Injectable()
+/*@Injectable()
 export default abstract class UserService {
     abstract login(userName: string, password: string): Promise <boolean>;
     abstract logOff(): void
@@ -15,4 +16,27 @@ export default abstract class UserService {
     abstract deleteChild(id: string): Promise <void>;
     abstract getAllTeachers(): Promise<ITeacher[]>;
 
+}*/
+
+@Injectable()
+
+
+
+export class UserService {
+
+    user: (IUser)[]=[];
+
+    constructor(private _db: AngularFireDatabase) {
+
+    }
+
+    //Función creada para insertar un producto llamando a la base de datos. //FUNCIONA
+    setUser(user: IUser){
+
+        this.user;
+        let referencia = this._db.database.ref("Users");
+        let res = referencia.push(user);
+        console.log("He insertado " + res.key);
+        
+    }
 }

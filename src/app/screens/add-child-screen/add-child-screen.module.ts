@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -17,4 +17,4 @@ import { AddChildScreenPage } from './add-child-screen.page';
   ],
   declarations: [AddChildScreenPage]
 })
-export class AddChildScreenPageModule {}
+export class AddChildScreenPageModule {}*/

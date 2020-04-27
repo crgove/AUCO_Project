@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import ClassroomService from 'src/app/services/classroom.service';
 import UserProvider from 'src/app/providers/ApiRest/user.provider';
 import { IChild } from 'src/app/interfaces/interfaces';
@@ -67,4 +67,4 @@ export class AddChildScreenPage implements OnInit {
       `/profile-screen/${this._user.getCurrentUser().isTeacher ? "teacher" : "children"}/${this._user.getCurrentUser().id}`
     )
   }
-}
+}*/

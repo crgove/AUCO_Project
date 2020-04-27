@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { IClassroom } from 'src/app/interfaces/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import ClassroomService from 'src/app/services/classroom.service';
 import UserService from 'src/app/services/user.service';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';*/
 
-@Component({
+/*@Component({
   selector: 'app-class-list-screen',
   templateUrl: './class-list-screen.page.html',
   styleUrls: ['./class-list-screen.page.scss'],
@@ -38,14 +38,14 @@ export class ClassListScreenPage implements OnInit {
       })
   
       return await loading.present();
-    }*/
+    }
   
 
   ngOnInit() {
 
-  }
+  }*/
 
-  async ionViewWillEnter(){
+  /*async ionViewWillEnter(){
 
     this.showLoading();
     this._class.getClassroomsByTeacher(this._userService.getCurrentUser().id).then(result => {
@@ -53,4 +53,4 @@ export class ClassListScreenPage implements OnInit {
     })
   }
 
-}
+}*/

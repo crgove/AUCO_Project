@@ -13,8 +13,16 @@
     <div class="imagen">
       <img class="imagenTamanyo" src='../assets/logoPi.png'>
     </div>
+
+    <ion-item class="font">
+      <ion-label class="font" position="floating">DNI</ion-label>
+      <ion-input type="DNI" [(ngModel)]="id"></ion-input>
+    </ion-item>
+    <div class="buttonSignIn"> 
+      <ion-button color="danger" class="shadow-redSecond" shape="round" routerLink='/form-str-list/' routerDirection="forward" (click)="(Implementar())">Sign in</ion-button>
+    </div>
   
-    <ion-item>
+    <!--<ion-item>
       <ion-label class="font" position="floating" >Username</ion-label>
       <ion-input [(ngModel)]="userTexto"></ion-input>
     </ion-item>
@@ -31,5 +39,6 @@
     <div class="buttonSignIn">
       <ion-button color="danger" class="shadow-redSecond" shape="round" (click)="(Implementar())">Sign in</ion-button>
     </div>
+  </div>-->
   </div>
 </ion-content>

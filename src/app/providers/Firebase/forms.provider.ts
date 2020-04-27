@@ -25,10 +25,12 @@ export default class FormsProvider extends FormsService {
         }
     }
 
+    //Antes era en addFormStructure: path: `teachers/${form.teacherId}/formStructs`,
+
     async addFormStructure(form: IFormStruct): Promise<string> {
         let result = await this._src.makeRequest({
             action: "CREATE",
-            path: `teachers/${form.teacherId}/formStructs`,
+            path: `teachers/${form.id}/formStructs`,
             params: form
         })
 
@@ -41,11 +43,13 @@ export default class FormsProvider extends FormsService {
 
         return notVoid
     }
+
+    //Antes era en addFormResponse: path: `teachers/${form.idChild}/formStructs`,
     
     async addFormRespose(form: IFormResponse): Promise<string> {
         let result = await this._src.makeRequest({
             action: "CREATE",
-            path: `children/${form.idChild}/formResponses`,
+            path: `children/${form.id}/formResponses`,
             params: form
         })
 
@@ -58,8 +62,25 @@ export default class FormsProvider extends FormsService {
         
         return notVoid
     }
+
+    //nuevo
+    async getFormsResponseByChild(id: string): Promise<IFirebaseResponse<IFormResponse>[]> {
+        let result = await this._src.makeRequest({
+            action: "GET_COL",
+            path: `children/${id}/formResponses`
+        })
+
+        let notVoid = result as IFirebaseResponse<IFormResponse>[]
+        
+        if(notVoid.length != undefined && notVoid.length > 0) {
+            return notVoid
+        } else {
+            return []
+        }
+    }
     
-    async getFormsResponseByChild(idChild: string): Promise<IFirebaseResponse<IFormResponse>[]> {
+
+    /*async getFormsResponseByChild(idChild: string): Promise<IFirebaseResponse<IFormResponse>[]> {
         let result = await this._src.makeRequest({
             action: "GET_COL",
             path: `children/${idChild}/formResponses`
@@ -72,7 +93,7 @@ export default class FormsProvider extends FormsService {
         } else {
             return []
         }
-    }
+    }*/
 
     async getFormResponseById(idForm: string): Promise<IFormResponse> {
         let result = await this._src.makeRequest({

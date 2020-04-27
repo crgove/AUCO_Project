@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -17,4 +17,4 @@ import { FormOfFormsPage } from './form-of-forms.page';
   ],
   declarations: [FormOfFormsPage]
 })
-export class FormOfFormsPageModule {}
+export class FormOfFormsPageModule {}*/

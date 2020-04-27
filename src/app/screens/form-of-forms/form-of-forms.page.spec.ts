@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { FormOfFormsPage } from './form-of-forms.page';
@@ -21,4 +21,4 @@ describe('FormOfFormsPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/

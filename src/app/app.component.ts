@@ -3,10 +3,10 @@ import { Component, NgZone } from '@angular/core';
 import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import UserService from './services/user.service';
+//import UserService from './services/user.service';
 import { Router } from '@angular/router';
 
-@Component({
+/*@Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
@@ -17,7 +17,6 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private menu: MenuController,
-    private _user: UserService,
     private _route: Router,
     private zone: NgZone, 
   ) {
@@ -54,5 +53,27 @@ export class AppComponent {
     this._route.navigateByUrl(
       `/profile-screen/${this._user.getCurrentUser().isTeacher ? "teacher" : "children"}/${this._user.getCurrentUser().id}`
     )
+  }*/
+
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.scss']
+  })
+  export class AppComponent {
+    constructor(
+      private platform: Platform,
+      private splashScreen: SplashScreen,
+      private statusBar: StatusBar
+    ) {
+      this.initializeApp();
+    }
+  
+    initializeApp() {
+      this.platform.ready().then(() => {
+        this.statusBar.styleDefault();
+        this.splashScreen.hide();
+      });
+    }
   }
-}

@@ -1,4 +1,4 @@
-import UserService from 'src/app/services/user.service';
+/*import UserService from 'src/app/services/user.service';
 import { ITeacher, IChild, IUser, IServerResponse } from 'src/app/interfaces/interfaces';
 import ApiRestSrc from './apiRest.dataSource';
 //import {createHash} from 'crypto';
@@ -11,7 +11,7 @@ import ApiRestSrc from './apiRest.dataSource';
     si se busca una lista de recursos y no se encutran => [],
     si ocurre una excepcíon no esperada como una falta de permisos (excepto login) => throw error
     si se enctra el recurso o lista de de recursos => se devuelve noramalmente
-*/
+
 export default class UserProvider extends UserService{
     currentUser: IUser
     readonly childrenPath = "child"
@@ -262,4 +262,4 @@ export default class UserProvider extends UserService{
         }
     
     }
-}
+}*/

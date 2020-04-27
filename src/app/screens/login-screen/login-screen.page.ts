@@ -1,36 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import UserService from 'src/app/services/user.service';
+//import UserService from 'src/app/services/user.service';
 import { Router } from '@angular/router';
-import { ToastController, LoadingController } from '@ionic/angular';
+import { ToastController, LoadingController, NavController } from '@ionic/angular';
 import { NgZone } from '@angular/core';
+import {IUser} from 'src/app/interfaces/interfaces';
+import { UserService } from 'src/app/services/user.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.page.html',
   styleUrls: ['./login-screen.page.scss'],
 })
-export class LoginScreenPage implements OnInit {
+export class LoginScreenPage  {
+
+  users: (IUser)[] = [];
+
+  user: IUser;
+  id: string;
   
 
   constructor(
     private _userService: UserService, 
     private _route: Router,
     private toastController: ToastController, 
-    private _loading: LoadingController) { }
+    private _loading: LoadingController,
+    private _nav: NavController,
+    private _db: AngularFireDatabase) { }
   
-  userTexto : string = "";
+  /*userTexto : string = "";
   contraTexto : string = "";
-  contrasenya = true;
+  contrasenya = true;*/
   
-  /*async presentLoading(){
-    const loading = await this._loading.create({
-      message: 'Waiting',
-      duration: 1000
-    })
-
-    return await loading.present();
-  }*/
-
   async showLoading(){
     const loading = await this._loading.create({
       message: "Waiting...",
@@ -45,38 +46,51 @@ export class LoginScreenPage implements OnInit {
 
   }
 
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'The user name or password is incorrect',
-      duration: 2000
+  async verify(){
+    const toastVerify = await this.toastController.create({
+      message: "DNI cant not be empty",
+      duration: 3000
     });
-    toast.present();
+
+    toastVerify.present();
   }
 
-  CambiarInput(){
-    this.contrasenya = !this.contrasenya;
+  async verifyAgain(){
+    const toastVerify = await this.toastController.create({
+      message: "Succesful",
+      duration: 3000
+    });
+
+    toastVerify.present();
+    console.log("ha pasado");
   }
 
   Implementar() {
     this.showLoading();
-    this._userService.login(this.userTexto,this.contraTexto).then(result => {
-      if(result) {
-        this._route.navigateByUrl(
-          `/profile-screen/${this._userService.getCurrentUser().isTeacher ? "teacher" : "children"}/${this._userService.getCurrentUser().id}`
-        )
+
+    if(this.id==""){
+         this.verify();
+    }else {
+        //this.verifyAgain();
+        this._route.navigateByUrl('/form-str-list');
+
+          this.user = {
+            "id": this.id
+          }
+        
+        this._userService.setUser(this.user);
+          
       }
-      else {
-        this.presentToast();
-      }
-    })
+
+    }
+    
   }
+
+
 
  
-  ngOnInit() {
+  /*ngOnInit() {
+    
 
-
-  }
-
+  }*/
   
-
-}

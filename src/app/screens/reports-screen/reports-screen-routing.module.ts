@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ReportsScreenPage } from './reports-screen.page';
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ReportsScreenPageRoutingModule {}
+export class ReportsScreenPageRoutingModule {}*/
