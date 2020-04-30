@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FormOfFormsPageRoutingModule } from './form-of-forms-routing.module';
+import { LastpagePageRoutingModule } from './lastpage-routing.module';
 
-import { FormOfFormsPage } from './form-of-forms.page';
+import { LastpagePage } from './lastpage.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FormOfFormsPageRoutingModule
+    LastpagePageRoutingModule
   ],
-  declarations: [FormOfFormsPage]
+  declarations: [LastpagePage]
 })
-export class FormOfFormsPageModule {}
+export class LastpagePageModule {}

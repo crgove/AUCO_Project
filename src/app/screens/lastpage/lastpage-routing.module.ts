@@ -1,12 +1,12 @@
-/*import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AddChildScreenPage } from './add-child-screen.page';
+import { LastpagePage } from './lastpage.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AddChildScreenPage
+    component: LastpagePage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AddChildScreenPageRoutingModule {}*/
+export class LastpagePageRoutingModule {}

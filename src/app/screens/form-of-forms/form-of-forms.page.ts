@@ -1,9 +1,9 @@
-/*import { Component, OnInit } from '@angular/core';
-import { IFormStruct } from 'src/app/interfaces/interfaces';
-import FormsService from 'src/app/services/forms.service';
-import UserService from  'src/app/services/user.service';
+import { Component, OnInit } from '@angular/core';
+import { IUser, IFormStruct } from 'src/app/interfaces/interfaces';
 import { ToastController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
+import FormsService from 'src/app/services/forms.service';
 
 @Component({
   selector: 'app-form-of-forms',
@@ -13,19 +13,26 @@ import { Router } from '@angular/router';
 export class FormOfFormsPage implements OnInit {
   constructor(
     private _formsService: FormsService,
-    private _userService: UserService,
     private _toast: ToastController,
-    private _route: Router
+    private _route: Router,
+    private _activatedRoute: ActivatedRoute,
     ) {}
-  
+
+      user: IUser;
+      id:string;
+
+  ngOnInit() {
+
+    this.id = this._activatedRoute.snapshot.paramMap.get('id');
+    console.log("He recibido un " + this.id);
+
+  }
   struct: IFormStruct = {
     name: "",
-    teacherId: "",
-    classesIds: [],
+    id: "29213271",
     fields: []
   }
 
-  
   async presentToast(message: string) {
     const toast = await this._toast.create({
       message: message,
@@ -44,13 +51,12 @@ export class FormOfFormsPage implements OnInit {
   }
 
   upload(){
-    this.struct.teacherId = this._userService.getCurrentUser().id
+    this.struct.id = this.id
     this._formsService.addFormStructure(this.struct)
+    console.log("ESTRUCTURA VALE: " + this.struct);
     this.presentToast("Your form has been updated")
-    this._route.navigateByUrl('/form-str-list')
-
+    this._route.navigateByUrl('/lastpage')
 
   }
 
-  ngOnInit() { }
-}*/
+}

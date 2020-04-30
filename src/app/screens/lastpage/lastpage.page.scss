@@ -1,0 +1,29 @@
+.font{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.imagen{
+    display:  flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.imagenTamanyo {
+    width: 300px;
+}
+
+.imagenText {
+    width: 200px;
+    display:  flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 75px;
+}
+
+.texto{
+    display:  flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-weight: bold;
+}

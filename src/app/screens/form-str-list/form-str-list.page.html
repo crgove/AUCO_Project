@@ -15,8 +15,13 @@
   <ion-list *ngFor="let struct of structs">
     <ion-card>
       <ion-item>
-        <ion-label class="font" (click)="navigate(struct.key)">Form: {{struct.value.name}}</ion-label>
+        <ion-label class="font"  (click)="navigate(struct.key)">Formulario: {{struct.value.name}}</ion-label>
       </ion-item>
     </ion-card>
   </ion-list>
+  <ion-button
+  color="danger" 
+  class="shadow-redSecond" 
+  shape="round"
+  *ngIf="id==29213271" [routerLink]="['/form-of-forms/', id]" routerDirection="forward">Add one</ion-button>
 </ion-content>

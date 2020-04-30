@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//import UserService from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { ToastController, LoadingController, NavController } from '@ionic/angular';
 import { NgZone } from '@angular/core';
-import {IUser} from 'src/app/interfaces/interfaces';
-import { UserService } from 'src/app/services/user.service';
+import {IUser, IUserManager} from 'src/app/interfaces/interfaces';
 import { AngularFireDatabase } from '@angular/fire/database';
+import FormsService from 'src/app/services/forms.service';
 
 @Component({
   selector: 'app-login-screen',
@@ -18,19 +17,15 @@ export class LoginScreenPage  {
 
   user: IUser;
   id: string;
-  
 
   constructor(
-    private _userService: UserService, 
     private _route: Router,
     private toastController: ToastController, 
     private _loading: LoadingController,
     private _nav: NavController,
-    private _db: AngularFireDatabase) { }
+    private _db: AngularFireDatabase,
+    private _formsService: FormsService,) { }
   
-  /*userTexto : string = "";
-  contraTexto : string = "";
-  contrasenya = true;*/
   
   async showLoading(){
     const loading = await this._loading.create({
@@ -48,7 +43,7 @@ export class LoginScreenPage  {
 
   async verify(){
     const toastVerify = await this.toastController.create({
-      message: "DNI cant not be empty",
+      message: "DNI no puede estar vacío",
       duration: 3000
     });
 
@@ -57,40 +52,39 @@ export class LoginScreenPage  {
 
   async verifyAgain(){
     const toastVerify = await this.toastController.create({
-      message: "Succesful",
+      message: "¡Muy bien. Has entrado!",
       duration: 3000
     });
 
     toastVerify.present();
-    console.log("ha pasado");
   }
 
   Implementar() {
-    this.showLoading();
+    if(this.id==undefined){
+        this.verify();
+        this._route.navigateByUrl('/login-screen')
 
-    if(this.id==""){
-         this.verify();
     }else {
-        //this.verifyAgain();
-        this._route.navigateByUrl('/form-str-list');
-
-          this.user = {
-            "id": this.id
-          }
-        
-        this._userService.setUser(this.user);
-          
+      this.user = {
+        id: this.id
       }
 
+    this._formsService.addUser(this.user);
+    this.verifyAgain();
+          
     }
-    
+
+
   }
 
 
 
- 
-  /*ngOnInit() {
+
+  }
+
+
+
+
     
 
-  }*/
-  
+

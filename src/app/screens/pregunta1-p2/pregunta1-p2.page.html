@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-list *ngFor="let item of struct.fields; let i = index">
+  <ion-list *ngFor="let item of struct.fields; let i = index">
       <div *ngIf="item.type =='text'">
         <p class="pene">{{item.label}}</p>
         <ion-item>
@@ -20,38 +20,39 @@
       <ion-item *ngIf="item.type=='radio'" [disabled]="idFormResponse != undefined">
         <ion-list>
           {{item.label}}
-          <ion-grid>
             <ion-radio-group [(ngModel)]="response.fields[i].response">
-              <ion-row>
-                <ion-slides spaceBetween="10">
-                  <ion-slide class="centrarleft">
-                    <ion-item class="ion-float-left">
-                      <ion-label>1</ion-label>
+                  <ion-row>
+                    <ion-item>
+                      <ion-label>0(Totalmente en desacuerdo)</ion-label>
+                      <ion-radio slot="end" value="0"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label>1(Moderadamente en desacuerdo)</ion-label>
                       <ion-radio slot="end" value="1"></ion-radio>
                     </ion-item>
-                    <ion-item class="ion-text-center">
-                      <ion-label>2</ion-label>
+
+                    <ion-item>
+                      <ion-label>2(Levemente en desacuerdo)</ion-label>
                       <ion-radio slot="end" value="2"></ion-radio>
                     </ion-item>
-                    <ion-item class="ion-text-end">
-                      <ion-label>3</ion-label>
+
+                    <ion-item>
+                      <ion-label>3(Levemente de acuerdo)</ion-label>
                       <ion-radio slot="end" value="3"></ion-radio>
                     </ion-item>
-                  </ion-slide>
-                  <ion-slide class="centrarleft">
+
                     <ion-item>
-                      <ion-label>4</ion-label>
+                      <ion-label>4(Moderadamente de acuerdo)</ion-label>
                       <ion-radio slot="end" value="4"></ion-radio>
                     </ion-item>
+
                     <ion-item>
-                      <ion-label>5</ion-label>
+                      <ion-label>5(Totalmente de acuerdo)</ion-label>
                       <ion-radio slot="end" value="5"></ion-radio>
                     </ion-item>
-                  </ion-slide>
-                </ion-slides>
-              </ion-row>
+                  </ion-row>
             </ion-radio-group>
-          </ion-grid>
         </ion-list>
       </ion-item>
       <ion-item *ngIf="item.type=='y/n'">

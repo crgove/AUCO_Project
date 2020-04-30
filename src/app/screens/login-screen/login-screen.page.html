@@ -19,26 +19,11 @@
       <ion-input type="DNI" [(ngModel)]="id"></ion-input>
     </ion-item>
     <div class="buttonSignIn"> 
-      <ion-button color="danger" class="shadow-redSecond" shape="round" routerLink='/form-str-list/' routerDirection="forward" (click)="(Implementar())">Sign in</ion-button>
+      <ion-button color="danger" class="shadow-redSecond" shape="round" [routerLink]="['/form-str-list/', id]"(click)="(Implementar())">Entrar</ion-button>
     </div>
-  
-    <!--<ion-item>
-      <ion-label class="font" position="floating" >Username</ion-label>
-      <ion-input [(ngModel)]="userTexto"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="contrasenya==true"> 
-      <ion-label class="font" position="floating" >Password</ion-label>
-      <ion-input type="password" [(ngModel)]="contraTexto"  value={{contraTexto}}></ion-input>
-      <ion-button (click)="(CambiarInput())" color="danger" class="shadow-red" shape="round">Show/Hide</ion-button>
-    </ion-item>
-    <ion-item *ngIf="contrasenya==false">
-      <ion-label class="font" position="floating">Password</ion-label>
-      <ion-input [(ngModel)]="contraTexto" value={{contraTexto}}></ion-input>
-      <ion-button (click)="(CambiarInput())" color="danger" class="shadow-red" shape="round">Show/Hide</ion-button>
-    </ion-item>
-    <div class="buttonSignIn">
-      <ion-button color="danger" class="shadow-redSecond" shape="round" (click)="(Implementar())">Sign in</ion-button>
+    <div
+    *ngIf="id==undefined" routerLink="/login-screen" routerDirection="forward">
     </div>
-  </div>-->
   </div>
 </ion-content>
+
